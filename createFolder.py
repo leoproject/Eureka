@@ -18,5 +18,8 @@ for path in paths:
     if not(isExist):
         folder = path.split('/')[-2]
         os.mkdir(path)
+        if folder == 'Log':
+            with open(path+'Log.txt', 'a') as f:
+                f.write('Organize logs:')
     else:
         pass
