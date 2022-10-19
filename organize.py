@@ -27,6 +27,7 @@ def log(file, dir):
 
 def move_files(files):
   for file in files:
+
     if file.endswith(doc_types):
       move(file, '{}/{}'.format(documents_dir, file))
       log(file,documents_dir)
@@ -39,6 +40,8 @@ def move_files(files):
     elif file.endswith(doc_book):
         move(file,'{}/{}'.format(ebooks_dir, file))
         log(file,ebooks_dir)
+    elif file == "organize.py":
+      pass
     else:
       move(file, '{}/{}'.format(others_dir, file))
       print('file {} moved to {}'.format(file, others_dir))
